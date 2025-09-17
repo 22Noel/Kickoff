@@ -1,0 +1,3 @@
+ALTER TABLE invite_links
+ADD COLUMN IF NOT EXISTS match_id INTEGER NOT NULL,
+ADD CONSTRAINT fk_invite_links_match FOREIGN KEY (match_id) REFERENCES match(id) ON DELETE CASCADE;

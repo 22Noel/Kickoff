@@ -1,0 +1,59 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+.vscode
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+!sample.env
+*.pem
+*.key
+*.crt
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+
+# Deno
+deno.lock
+.deno/
+/deno-dir/
+
+# Build outputs
+/build/
+/.svelte-kit/
+.output/
+
+# Docker volumes
+docker-volumes/
+pg_data/
+*.njsproj
+*.sln
+*.sw?
+
+.env

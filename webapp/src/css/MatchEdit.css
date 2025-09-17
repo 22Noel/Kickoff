@@ -1,0 +1,332 @@
+.match-player-item {
+  background-color: #1e1e1e;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  transition: all 0.2s ease;
+}
+
+.match-player-item.selected {
+  background-color: #2e2e2e;
+  box-shadow: 0 0 0 2px #4caf50;
+}
+
+.match-player-item:hover {
+  background-color: #252525;
+}
+
+.match-player-empty {
+  text-align: center;
+  padding: 12px 16px;
+  color: #666;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+}
+
+.player-button {
+  background: none;
+  border: none;
+  color: inherit;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+.player-goals-display {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.goals-button {
+  background: none;
+  border: none;
+  color: #4caf50;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  min-height: 32px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.goals-button:hover {
+  background-color: rgba(76, 175, 80, 0.1);
+}
+
+.goals-button:active {
+  background-color: rgba(76, 175, 80, 0.2);
+}
+
+.goals-display {
+  min-width: 60px;
+  text-align: center;
+}
+
+.match-time-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  color: inherit;
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.match-location-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  color: inherit;
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.score-input {
+  width: 80px;
+  height: 80px;
+  font-size: 2rem;
+  text-align: center;
+  border: 2px solid #333;
+  border-radius: 12px;
+  background-color: #1e1e1e;
+  color: inherit;
+  padding: 0;
+  margin: 0 8px;
+  -moz-appearance: textfield;
+}
+
+.score-input::-webkit-outer-spin-button,
+.score-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.score-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.action-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.save-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.save-button:hover {
+  background-color: #45a049;
+}
+
+.delete-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.delete-button:hover {
+  background-color: #d32f2f;
+}
+
+.time-container {
+  margin-bottom: 16px;
+}
+
+.time-input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.location-container {
+  margin-bottom: 16px;
+}
+
+.location-input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.no-team-header {
+  font-weight: 600;
+  color: #aaa;
+  margin-top: 1em;
+  cursor: default;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  background-color: transparent;
+  text-align: center;
+}
+
+.no-team-header.selectable {
+  background-color: #1e1e1e;
+  color: #fff;
+  cursor: pointer;
+  padding: 12px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.no-team-header.selectable:hover {
+  background-color: #2e2e2e;
+}
+
+.teams-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.teams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.team-header {
+  font-weight: 600;
+  color: #4caf50;
+  margin-bottom: 12px;
+  cursor: default;
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  background-color: transparent;
+  text-align: center;
+  user-select: none;
+}
+
+.team-header.selectable {
+  background-color: #1e1e1e;
+  cursor: pointer;
+  padding: 12px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.team-header.selectable:hover {
+  background-color: #2e2e2e;
+}
+
+.match-player-item {
+  user-select: none;
+}
+
+.team-header {
+  font-weight: 600;
+  color: #4caf50;
+  margin-bottom: 12px;
+  cursor: default;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 16px;
+  background-color: transparent;
+  transition: all 0.2s ease;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.team-header.selectable {
+  cursor: pointer;
+  border: 2px solid #4caf50;
+  background-color: #1e1e1e;
+}
+
+.action-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 32px auto 16px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.game-button {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1.1rem;
+  width: 100%;
+  color: #fff;
+  transition: background-color 0.2s ease;
+}
+
+.shuffle-button {
+  background: #4caf50;
+}
+
+.shuffle-button:hover {
+  background: #388e3c;
+}
+
+.share-button {
+  background: #1976d2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.share-button:hover {
+  background: #1565c0;
+}
+
+.mvp-container {
+  margin-bottom: 24px;
+  max-width: 300px;
+  margin: 0 auto 24px;
+}
+
+.mvp-input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mvp-select {
+  font-weight: 500;
+  border-radius: 8px;
+  border: 1px solid #4caf50;
+  background: #232323;
+  color: #fff;
+  padding: 8px 12px;
+  width: 100%;
+  font-size: 1.1rem;
+}

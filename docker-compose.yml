@@ -1,0 +1,77 @@
+services:
+  frontend:
+    container_name: kickoff-frontend
+    image: ${DOCKERHUB_USERNAME}/kickoff-frontend:${IMAGE_TAG:-latest}
+    ports:
+      - "${FRONTEND_PORT:-80}:80"
+    environment:
+      - VITE_API_URL=/api
+    build:
+      context: ./webapp
+      dockerfile: Dockerfile
+      args:
+        - VITE_API_URL=/api
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - kickoff-network
+  backend:
+    container_name: kickoff-backend
+    build:
+      context: ./kickoff-api
+      dockerfile: Dockerfile
+    image: ${DOCKERHUB_USERNAME}/kickoff-backend:${IMAGE_TAG:-latest}
+    ports:
+      - "${BACKEND_PORT:-3000}:3000"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}
+      - POSTGRES_DB=kickoff
+      - BACKEND_PORT=3000
+      - NODE_ENV=${NODE_ENV:-production}
+      - JWT_SECRET=${JWT_SECRET:-your_jwt_secret_key}
+      - FRONTEND_URL=${FRONTEND_URL:-http://localhost:5173}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://backend:3000/status"]
+      interval: 30s
+      timeout: 15s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+    networks:
+      - kickoff-network
+
+  db:
+    container_name: kickoff-db
+    image: postgres:15-alpine
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}
+      - POSTGRES_DB=kickoff
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./kickoff-api/scripts/create_db.sql:/docker-entrypoint-initdb.d/01_create_db.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-kickoff}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - kickoff-network
+
+networks:
+  kickoff-network:
+    name: kickoff-network
+    driver: bridge
+
+volumes:
+  postgres_data:
+    name: kickoff-postgres-data

@@ -1,0 +1,46 @@
+{
+  "name": "kickoff-api-express",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+  "start": "node dist/index.js",
+  "dev": "psql -h localhost -U postgres -d postgres -f scripts/create_db.sql && npx tsx --watch src/index.ts",
+    "build": "tsc",
+    "test": "jest --config jest.config.cjs",
+    "insert-test-data": "npx tsx src/test/scripts/insert_test_data.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "drizzle-orm": "^0.44.2",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@babel/preset-typescript": "^7.27.1",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/jest": "^30.0.0",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.0.10",
+    "@types/node-fetch": "^2.6.12",
+    "@types/pg": "^8.15.4",
+    "@types/supertest": "^6.0.3",
+    "babel-jest": "^30.0.4",
+    "jest": "^30.0.5",
+    "pg": "^8.16.3",
+    "supertest": "^7.1.4",
+    "ts-jest": "^29.4.0",
+    "typescript": "^5.8.3"
+  },
+  "type": "module"
+}

@@ -1,0 +1,255 @@
+
+.match-creation-textfield input,
+.match-creation-textfield  {
+    background: #353535;
+    color: #fff;
+    border-radius: 8px;
+    border: 1px solid #353535;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    margin-bottom: 0.7em;
+    width: 90%;
+    transition: border-color 0.2s;
+}
+.match-creation-textfield:focus {
+    border-color: #4caf50;
+    outline: none;
+}
+
+
+.match-creation-container .MuiPaper-root,
+.match-creation-container .MuiPickersPopper-paper,
+.MuiPickersPopper-paper {
+    background: #353535;
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.25);
+}
+
+
+.match-creation-container .MuiInputBase-root,
+.match-creation-container .MuiOutlinedInput-root,
+.match-creation-container .MuiInputLabel-root,
+.match-creation-container .MuiFormLabel-root,
+.match-creation-container .MuiPickersDay-root,
+.match-creation-container .MuiPickersCalendarHeader-root,
+.match-creation-container .MuiPickersCalendarHeader-label,
+.match-creation-container .MuiPickersCalendarHeader-switchViewButton,
+.match-creation-container .MuiPickersArrowSwitcher-root,
+.match-creation-container .MuiPickersDay-dayWithMargin {
+    background: #353535;
+    color: #fff;
+    border-radius: 8px;
+    border-color: #353535;
+}
+
+
+.match-creation-container .MuiInputLabel-root,
+.match-creation-container .MuiFormLabel-root {
+    color: #aaa;
+}
+
+
+.match-creation-container .MuiOutlinedInput-notchedOutline {
+    border-color: #353535;
+}
+
+
+.match-creation-container .Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #4caf50;
+}
+
+
+.match-creation-container .MuiPickersDay-root.Mui-selected {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+
+.match-creation-container .MuiPickersDay-root:not(.Mui-selected):hover {
+    background-color: #388e3c;
+    color: #fff;
+}
+
+/* Ensure the main container arranges children horizontally */
+.main-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+    margin-top: 80px;
+    min-height: calc(100vh - 80px);
+}
+
+@media (max-width: 600px) {
+    #root {
+        min-width: 100vw;
+        padding: 0px;
+    }
+
+    .main-container {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0;
+        margin-top: 0;
+        min-height: 100vh;
+        width: 100vw;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+
+    .match-container {
+        min-width: 100vw;
+        padding: 1rem 0.5rem;
+        border-radius: 0;
+    }
+
+    .match-creation-container {
+        padding: 1rem 0.5rem;
+        border-radius: 0;
+        width: 100vw;
+        max-width: 100vw;
+        box-sizing: border-box;
+        min-width: 0;
+        /* Ensure children stack and don't overflow */
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+
+    .match-creation-btn {
+        padding: 0.4em 1em !important;
+        font-size: 0.95em !important;
+        border-radius: 7px !important;
+        min-width: 120px;
+        width: auto !important;
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+    }
+
+    .MuiPickersPopper-paper,
+    .MuiPickersPopper-root,
+    .MuiPickersDay-root,
+    .MuiPickersCalendarHeader-root {
+        max-width: 100vw !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .MuiPickersPopper-paper {
+        width: 100vw !important;
+        left: 0 !important;
+        right: 0 !important;
+    }
+}
+
+.MuiPickersCalendarHeader-switchViewButton svg {
+
+    /* Target the actual calendar icon button by aria-label */
+    .MuiIconButton-root[aria-label="Choose date"] {
+        min-width: 28px !important;
+        width: 28px !important;
+        height: 28px !important;
+        padding: 4px !important;
+    }
+
+    .MuiIconButton-root[aria-label="Choose date"] svg {
+        width: 18px !important;
+        height: 18px !important;
+        font-size: 1em !important;
+    }
+
+    font-size: 1.2em !important;
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.match-creation-btn:hover {
+    background: #388e3c !important;
+}
+
+.match-container>h5,
+.match-container>.MuiTypography-h5 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.match-creation-container {
+    background: #232323;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px 0 rgba(76, 175, 80, 0.10);
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: stretch;
+    width: 100%;
+    border: 1px solid #353535;
+}
+
+.match-creation-container input,
+.match-creation-container .MuiInputBase-root {
+    color: #fff !important;
+    border-radius: 8px !important;
+}
+
+.match-creation-container label {
+    color: #aaa !important;
+}
+
+.match-creation-container button {
+    background: #4caf50;
+    color: #fff;
+    border-radius: 8px;
+    padding: 0.5em 1.5em;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.match-creation-container button:hover {
+    background: #388e3c;
+}
+
+button {
+    width: 100%;
+}
+
+.match-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: #232323;
+    padding: 2.5rem 2rem 2rem 2rem;
+    min-width: 50vw;
+    min-height: 100vh;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.25);
+    margin-bottom: 2rem;
+    gap: 1.5rem;
+}
+
+.match-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background: linear-gradient(90deg, #232323 60%, #353535 100%);
+    color: #fff;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.2rem;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px 0 rgba(76, 175, 80, 0.10), 0 1.5px 8px 0 rgba(0, 0, 0, 0.18);
+    cursor: pointer;
+    transition: box-shadow 0.2s, transform 0.2s, background 0.2s;
+    border: 1.5px solid #353535;
+}
+
+.match-item:hover {
+    box-shadow: 0 6px 18px 0 rgba(76, 175, 80, 0.18);
+    transform: translateY(-2px) scale(1.01);
+    border: 1px solid #4caf50;
+}

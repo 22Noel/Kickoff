@@ -1,0 +1,53 @@
+services:
+  test:
+    container_name: kickoff-frontend-tests
+    build:
+      context: ./webapp
+      dockerfile: Dockerfile.test
+    environment:
+      - VITE_API_URL=/api
+      - TEST_MODE=true
+    command: >
+      sh -c "npm run build && npm run test:integration"
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - kickoff-network
+  backend:
+    container_name: kickoff-backend-test
+    build:
+      context: ./kickoff-api
+      dockerfile: Dockerfile
+    environment:
+      - DATABASE_URL=postgres://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@db:5432/kickoff_test
+      - BACKEND_PORT=3000
+      - NODE_ENV=test
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - kickoff-network
+  # Override the db service for testing purposes
+  db:
+    container_name: kickoff-db-test
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}
+      - POSTGRES_DB=kickoff_test
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./kickoff-api/src/test/scripts/create_test_db.sql:/docker-entrypoint-initdb.d/01_create_test_db.sql
+      - ./kickoff-api/src/test/scripts/setup_test_db.sql:/docker-entrypoint-initdb.d/02_setup_test_db.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  kickoff-network:
+    driver: bridge
+      

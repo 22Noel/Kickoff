@@ -1,0 +1,46 @@
+/* Smaller DatePicker and TextField styles for MatchCreation */
+
+.match-creation-datepicker,
+.match-creation-textfield {
+  font-size: 0.9rem !important;
+  padding: 0.3em 0.7em !important;
+  height: 2.2em !important;
+  min-width: 120px !important;
+  border-radius: 6px !important;
+}
+
+.match-creation-datepicker input,
+.match-creation-textfield input {
+  font-size: 0.9rem !important;
+  padding: 0.3em 0.7em !important;
+  height: 2.2em !important;
+}
+
+.match-creation-datepicker .MuiInputBase-root,
+.match-creation-textfield .MuiInputBase-root {
+  font-size: 0.9rem !important;
+  padding: 0.3em 0.7em !important;
+  height: 2.2em !important;
+}
+
+.match-creation-datepicker .MuiOutlinedInput-root,
+.match-creation-textfield .MuiOutlinedInput-root {
+  font-size: 0.9rem !important;
+  padding: 0.3em 0.7em !important;
+  height: 2.2em !important;
+}
+
+.match-creation-datepicker .MuiOutlinedInput-input,
+.match-creation-textfield .MuiOutlinedInput-input,
+.match-creation-datepicker .MuiInputBase-input,
+.match-creation-textfield .MuiInputBase-input {
+  font-size: 0.9rem !important;
+  padding: 0.3em 0.7em !important;
+  height: 2.2em !important;
+  box-sizing: border-box !important;
+}
+
+.match-creation-datepicker .MuiInputLabel-root,
+.match-creation-textfield .MuiInputLabel-root {
+  font-size: 0.85rem !important;
+}

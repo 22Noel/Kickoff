@@ -1,0 +1,149 @@
+/* Main match details container */
+.match-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 16px;
+  margin-top: 100px;
+  margin-bottom: 32px;
+  min-height: 60vh;
+}
+
+/* Card for match details */
+.match-card {
+  background: linear-gradient(90deg, #232323 60%, #353535 100%);
+  padding: 2.5rem 2rem;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(76,175,80,0.10), 0 1.5px 8px 0 rgba(0,0,0,0.18);
+  color: #fff;
+  max-width: 480px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.match-score {
+  color: #4caf50;
+  font-weight: 700;
+  margin-bottom: 16px;
+  font-size: 2.8rem;
+  letter-spacing: 1px;
+}
+
+.match-time {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.match-date {
+  color: #aaa;
+  margin-bottom: 8px;
+}
+
+.match-location {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.match-mvp {
+  font-size: 1.1rem;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.match-players-title {
+  margin-top: 24px;
+  margin-bottom: 8px;
+  color: #4caf50;
+  font-weight: 600;
+}
+
+
+.match-players-list {
+  width: 100%;
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+  min-height: 48px;
+  border: 2px dashed #4caf50;
+  border-radius: 10px;
+  background: #232323;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.match-players-list.drag-over {
+  background: #2e7d32;
+  border-color: #fff;
+}
+
+.match-player-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #333;
+  color: #fff;
+  font-size: 1rem;
+  background: #353535;
+  margin: 4px 8px;
+  border-radius: 6px;
+  cursor: grab;
+  box-shadow: 0 2px 8px 0 rgba(76,175,80,0.10);
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+}
+
+.match-player-item.dragging {
+  background: #4caf50;
+  color: #232323;
+  cursor: grabbing;
+  box-shadow: 0 0 0 3px #4caf50, 0 2px 8px 0 rgba(76,175,80,0.10);
+  opacity: 0.85;
+}
+
+.match-player-item:active {
+  background: #4caf50;
+  color: #232323;
+  cursor: grabbing;
+}
+
+.match-player-empty {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Top bar for edit/view toggle button */
+.match-topbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 8px;
+  min-height: 32px;
+}
+
+.match-toggle-btn {
+  background: transparent;
+  color: #4caf50;
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 rgba(76,175,80,0.10);
+  transition: color 0.2s, background 0.2s;
+}
+.match-toggle-btn.view {
+  color: #aaa;
+}
+.match-toggle-btn:hover {
+  background: #232323;
+  color: #388e3c;
+}

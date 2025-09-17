@@ -1,0 +1,40 @@
+.MuiInputLabel-root, .MuiFormLabel-root {
+  color: #fff !important;
+}
+.MuiInputBase-input, .MuiOutlinedInput-input {
+  color: #fff !important;
+}
+.profile-container {
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom: 0px;
+  background: #232323;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  padding: 32px 16px;
+  color: #fff;
+  border: 1px solid #353535;
+}
+
+.profile-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+}
+
+.profile-stat-value {
+  color: #4caf50;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border-radius: 5px;
+  padding: 0.5em 1.1em;
+  transition: background-color 0.4s ease-in-out;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
