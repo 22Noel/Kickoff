@@ -24,6 +24,7 @@ beforeEach(() => {
   jest.spyOn(window, 'alert').mockImplementation(() => {});
   jest.spyOn(router, 'useNavigate').mockImplementation(jest.fn());
   jest.spyOn(userService, 'login').mockImplementation(jest.fn());
+  localStorage.clear();
 });
 
 afterEach(() => {
@@ -144,6 +145,6 @@ it('Redirects to signup page when "Crear cuenta" is clicked', async () => {
     fireEvent.click(signupLink);
 
     await waitFor(() => {
-        expect(history.location.pathname).toBe('/signup');
+        expect(mockNavigate).toHaveBeenCalledWith('/signup', { state: { username: '', password: '' } });
     });
 });

@@ -100,9 +100,7 @@ function Login() {
                 <div className="btn">
                     <button className="button1" data-testid="login-button" onClick={handleLogin}>Iniciar Sesión</button>
                 </div>
-                {/* <Link to="/signup" data-testid="signup-link" style={{ textDecoration: 'none' }}> */}
-                    <button className="button2" onClick={navigateToSignup}>Crear cuenta</button>
-                {/* </Link> */}
+                    <button className="button2" onClick={navigateToSignup} data-testid="signup-link">Crear cuenta</button>
             </form>
         </div>
     );
