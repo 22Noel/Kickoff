@@ -24,6 +24,12 @@ jobs:
           push: false
           tags: webapp:latest
 
+      - name: Install dependencies and run tests
+        run: |
+          cd webapp
+          npm ci
+          npm run test
+
       # Optional: Add steps to push to registry or run tests
       # - name: Log in to DockerHub
       #   uses: docker/login-action@v3
